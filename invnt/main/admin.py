@@ -6,4 +6,6 @@ admin.site.register(models.Product)
 admin.site.register(models.Unit)
 
 
-admin.site.register(models.Purcharse)
+admin.site.register(models.Purchase)
+admin.site.register(models.Sale)
+admin.site.register(models.Inventory)

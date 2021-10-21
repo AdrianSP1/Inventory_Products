@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models.deletion import CASCADE
 
 # Vendor
 class Vendor(models.Model):
@@ -29,5 +30,21 @@ class Product(models.Model):
 
     def __str__(self):
         return self.title
+
+
+#Purcharse
+class Purcharse(models.Model):
+    product= models.ForeignKey(Product, on_delete=CASCADE)
+    vendor= models.ForeignKey(Vendor, on_delete=CASCADE)
+    qty= models.FloatField()
+    price= models.FloatField()
+    total= models.FloatField()
+    pur_date= models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.product
+
+
+    
 
     
